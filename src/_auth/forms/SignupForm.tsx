@@ -26,6 +26,7 @@ import { useUserContext } from "@/context/AuthContext";
 function SignupForm() {
   const { toast } = useToast();
   const navigate = useNavigate();
+
   const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
 
   const { mutateAsync: createUserAccount, isPending: isCreatingUser } =

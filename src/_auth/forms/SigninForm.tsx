@@ -24,7 +24,7 @@ function SigninForm() {
   const navigate = useNavigate();
   const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
 
-  const { mutateAsync: signInAccount, isPending } = useSignInAccount();
+  const { mutateAsync: signInAccount } = useSignInAccount();
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof SigninValidation>>({
@@ -109,12 +109,12 @@ function SigninForm() {
           </Button>
 
           <p className="text-small-regular text-light-2 text-center mt-2">
-            Already have an account?
+            Don't have an account?
             <Link
               to="/sign-in"
               className=" text-primary-500 text-small-semibold ml-1"
             >
-              Log In
+              Sign Up
             </Link>
           </p>
         </form>
