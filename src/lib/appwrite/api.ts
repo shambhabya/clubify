@@ -70,7 +70,7 @@ export async function signInAccount(user: { email: string; password: string }) {
 export async function getCurrentUser() {
   try {
     const currentAccount = await account.get();
-    console.log("current acount-", currentAccount);
+    // console.log("current acount-", currentAccount);
 
     if (!currentAccount) throw Error;
 
@@ -79,8 +79,6 @@ export async function getCurrentUser() {
       appwriteConfig.userCollectionId,
       [Query.equal("accountId", currentAccount.$id)]
     );
-
-    console.log("current user-", currentUser);
 
     if (!currentUser) throw Error;
 
@@ -218,8 +216,13 @@ export async function searchPosts(searchTerm: string) {
   }
 }
 
-export async function getInfinitePosts({ pageParam }: { pageParam: number }) {
+export async function getInfinitePosts({
+  pageParam,
+}: {
+  pageParam: number | null;
+}) {
   const queries: any[] = [Query.orderDesc("$updatedAt"), Query.limit(9)];
+  console.log("queries-", queries);
 
   if (pageParam) {
     queries.push(Query.cursorAfter(pageParam.toString()));
@@ -231,7 +234,7 @@ export async function getInfinitePosts({ pageParam }: { pageParam: number }) {
       appwriteConfig.postCollectionId,
       queries
     );
-
+    console.log(posts);
     if (!posts) throw Error;
 
     return posts;

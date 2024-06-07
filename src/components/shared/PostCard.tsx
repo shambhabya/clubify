@@ -19,7 +19,7 @@ const PostCard = ({ post }: PostCardProps) => {
             <img
               src={
                 post?.creator?.imageUrl ||
-                "/public/assets/icons/profile-placeholder.svg"
+                "/assets/icons/profile-placeholder.svg"
               }
               alt="creator"
               className="rounded-full w-12 lg:h-12"
@@ -45,16 +45,11 @@ const PostCard = ({ post }: PostCardProps) => {
           to={`/update-post/${post.$id}`}
           className={`${user.id !== post.creator.$id && "hidden"}`}
         >
-          <img
-            src="/public/assets/icons/edit.svg"
-            alt="edit"
-            width={20}
-            height={20}
-          />
+          <img src="/assets/icons/edit.svg" alt="edit" width={20} height={20} />
         </Link>
       </div>
 
-      <Link to={`/post/${post.$id}`}>
+      <Link to={`/posts/${post.$id}`}>
         <div className="small-medium lg:base-medium py-5">
           <p>{post.caption}</p>
           <ul className="flex gap-1 mt=2">
@@ -67,7 +62,7 @@ const PostCard = ({ post }: PostCardProps) => {
         </div>
 
         <img
-          src={post.imageUrl || "/public/assets/icons/profile-placeholder.svg"}
+          src={post.imageUrl || "/assets/icons/profile-placeholder.svg"}
           alt="post image"
           className="post-card_img"
         />
