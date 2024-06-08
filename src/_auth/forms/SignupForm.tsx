@@ -26,13 +26,12 @@ function SignupForm() {
   const { toast } = useToast();
   const navigate = useNavigate();
 
-  const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
+  const { checkAuthUser } = useUserContext();
 
   const { mutateAsync: createUserAccount, isPending: isCreatingUser } =
     useCreateUserAccount();
 
-  const { mutateAsync: signInAccount, isPending: isSigningIn } =
-    useSignInAccount();
+  const { mutateAsync: signInAccount } = useSignInAccount();
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof SignupValidation>>({
@@ -79,7 +78,12 @@ function SignupForm() {
   return (
     <Form {...form}>
       <div className="sm:w-420 flex-center flex-col">
-        <img src="/assets/images/logo.svg" alt="logo" />
+        <img
+          src="/assets/images/logo.png"
+          alt="logo"
+          height={200}
+          width={200}
+        />
         <h2 className=" h3-bold md:h2-bold pt-5 sm:pt-12">
           Create a new account
         </h2>

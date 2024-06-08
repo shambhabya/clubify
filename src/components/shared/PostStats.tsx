@@ -7,7 +7,6 @@ import {
 import { checkIsLiked } from "@/lib/utils";
 import { Models } from "appwrite";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import Loader from "./Loader";
 
 type PostStatsProps = {

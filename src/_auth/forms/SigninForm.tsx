@@ -60,7 +60,13 @@ function SigninForm() {
   return (
     <Form {...form}>
       <div className="sm:w-420 flex-center flex-col">
-        <img src="/assets/images/logo.svg" alt="logo" />
+        <img
+          src="/assets/images/logo.png"
+          alt="logo"
+          height={200}
+          width={200}
+          className=" rounded-lg"
+        />
         <h2 className=" h3-bold md:h2-bold pt-5 sm:pt-12">
           Log in to your account
         </h2>
@@ -111,7 +117,7 @@ function SigninForm() {
           <p className="text-small-regular text-light-2 text-center mt-2">
             Don't have an account?
             <Link
-              to="/sign-in"
+              to="/sign-up"
               className=" text-primary-500 text-small-semibold ml-1"
             >
               Sign Up
