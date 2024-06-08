@@ -15,7 +15,7 @@ function AuthLayout() {
           </section>
 
           <img
-            src="/public/assets/images/side-img2.jpg"
+            src="/assets/images/side-img2.jpg"
             alt="logo"
             className="hidden xl:block h-screen w-1/2 object-cover bg-no-repeat opacity-40"
           />
