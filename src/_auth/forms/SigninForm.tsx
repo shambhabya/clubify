@@ -91,6 +91,7 @@ function SigninForm() {
               </FormItem>
             )}
           />
+          <div className="text-sm">Test Email- sammy@gmail.com</div>
           <FormField
             control={form.control}
             name="password"
@@ -104,6 +105,7 @@ function SigninForm() {
               </FormItem>
             )}
           />
+          <div className="text-sm">Test Password- 12345678</div>
           <Button type="submit" className=" shad-button_primary">
             {isUserLoading ? (
               <div className="flex-center gap-2">
@@ -113,7 +115,6 @@ function SigninForm() {
               "Sign in"
             )}
           </Button>
-
           <p className="text-small-regular text-light-2 text-center mt-2">
             Don't have an account?
             <Link
